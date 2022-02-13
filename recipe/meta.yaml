@@ -14,7 +14,7 @@ build:
     - cellfinder_download = cellfinder_core.download.cli:main
     - cellfinder_train = cellfinder_core.train.train_yml:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:

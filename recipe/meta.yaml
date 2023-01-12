@@ -27,7 +27,7 @@ requirements:
     - pip
     - python
   run:
-    - dask-core
+    - dask
     - fancylog >=0.0.7
     - imlib >=0.0.26
     - natsort
@@ -35,11 +35,10 @@ requirements:
     - python
     - scikit-image
     - scikit-learn
-    - tensorflow >=2.5.0  # [unix]
+    - tensorflow >=2.5.0
     - tifffile
     - tqdm
-  run_constrained:   # [win]
-    - tensorflow >=2.5.0  # [win]
+
 
 test:
   imports:

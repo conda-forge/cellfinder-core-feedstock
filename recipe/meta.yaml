@@ -1,5 +1,5 @@
 {% set name = "cellfinder-core" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cellfinder-core-{{ version }}.tar.gz
-  sha256: c0fc7c93b098b7033222450dcc4d02ae2a97f4e6ebea3f4ffa1f62f6febf3c23
+  sha256: 7b107a368903e0470ea7b89b8d2353622db2f455ad1f01f427f64a5c2b8efbec
 
 build:
   entry_points:
@@ -35,10 +35,12 @@ requirements:
     - python
     - scikit-image
     - scikit-learn
-    - tensorflow >=2.5.0
+    - tensorflow >=2.5.0  # [unix]
     - tifffile
     - tqdm
-
+    
+  run_constrained:   # [win]
+      - tensorflow >=2.5.0  # [win]
 
 test:
   imports:
@@ -47,7 +49,7 @@ test:
     - pip list
     - pip check  # [unix]
     - cellfinder_download --help
-    - cellfinder_train --help
+    - cellfinder_train --help  # [unix]
   requires:
     - pip
 

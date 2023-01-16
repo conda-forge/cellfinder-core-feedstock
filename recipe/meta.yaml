@@ -35,10 +35,12 @@ requirements:
     - python
     - scikit-image
     - scikit-learn
-    - tensorflow >=2.5.0
+    - tensorflow >=2.5.0  # [unix]
     - tifffile
     - tqdm
-
+    
+  run_constrained:   # [win]
+      - tensorflow >=2.5.0  # [win]
 
 test:
   imports:

@@ -49,7 +49,7 @@ test:
     - pip list
     - pip check  # [unix]
     - cellfinder_download --help
-    - cellfinder_train --help
+    - cellfinder_train --help # [unix]
   requires:
     - pip
 

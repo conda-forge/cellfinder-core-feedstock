@@ -31,21 +31,18 @@ requirements:
     - python >=3.8, <3.11
     - scikit-image
     - scikit-learn
-    - tensorflow >=2.5.0, <2.12.0  # [unix]
+    - tensorflow >=2.5.0, <2.12.0
     - tifffile
     - tqdm
-
-  run_constrained:   # [win]
-      - tensorflow >=2.5.0, <2.12.0  # [win]
 
 test:
   imports:
     - cellfinder_core
   commands:
     - pip list
-    - pip check  # [unix]
+    - pip check
     - cellfinder_download --help
-    - cellfinder_train --help  # [unix]
+    - cellfinder_train --help
   requires:
     - pip
 

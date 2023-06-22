@@ -1,5 +1,5 @@
 {% set name = "cellfinder-core" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cellfinder-core-{{ version }}.tar.gz
-  sha256: 48da21877ff0f89303dc12122aec9ded26731bc2386c10b9a689b5187c3a4d88
+  sha256: eb96abbf3320ddb211e93fd33a0e5e0b967faf768f9e72427be86f768839f618
 
 build:
   noarch: python

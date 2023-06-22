@@ -15,12 +15,13 @@ build:
     - cellfinder_download = cellfinder_core.download.cli:main
     - cellfinder_train = cellfinder_core.train.train_yml:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - python >=3.8, <3.11
+    - setuptools_scm
   run:
     - dask
     - fancylog >=0.0.7

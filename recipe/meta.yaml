@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cellfinder-core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cellfinder-core-{{ version }}.tar.gz
   sha256: c1fc9da659d40043a97b970104c75cace21582aa25e31b64fec53c2b6dc26201
 
 build:
@@ -15,12 +15,12 @@ build:
     - cellfinder_download = cellfinder_core.download.cli:main
     - cellfinder_train = cellfinder_core.train.train_yml:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8, <3.11
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - dask
@@ -29,7 +29,7 @@ requirements:
     - natsort
     - numba
     - numpy
-    - python >=3.8, <3.11
+    - python >={{ python_min }},<3.11
     - scikit-image
     - scikit-learn
     - scipy
@@ -49,6 +49,7 @@ test:
     - cellfinder_train --help  # [unix]
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://brainglobe.info/cellfinder
